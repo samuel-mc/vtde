@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    /* Font size */ 
+    --sm: 1.2rem;
+    --md: 1.6rem;
+    --lg: 2.4rem;
+    --xl: 3rem;
+
+    /* Colors */
+    --black: #000;
+    --white: #fff;
+    --gray: #686868;
+
+    --primary: #001b48;
+    --secondary: #02457a;
+    --light: #D6E8ee;
+    
+    /* Border Radius */
+    --br: 12px;
+
+    /* Box shadow */
+    --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* 
+    Estilos que se reutilizan
+*/
+
+/* Contenedor que ajusta sus columas de acuerdo al tamaño del dispositivo */
+.responsive-container {
+    display: grid;
+    gap: 12px;
+}
+
+.responsive-container__title {
+    font-size: var(--lg);
+    font-weight: bold;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.responsive-container__content {
+    font-size: var(--md);
+    color: var(--black);
+}
+
+.responsive-container .about__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.responsive-container .about__image--img {
+    width: 80%;
+    height: auto;
+}
+
+
+/*
+    Estilos del archivo home.html
+*/
+
+/* Header */
+.navbar__logo {
+    width: 300px;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar__item {
+    font-size: var(--md);
+    cursor: pointer;
+    color: var(--black);
+    text-decoration: none;
+    margin: 12px;
+}
+
+/* Hero */
+
+.home-main__hero {
+    background-image: url('../assets/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+
+.hero__text {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    color: var(--white);
+    height: 200px;
+    padding: 16px;
+    position: absolute;
+}
+
+.hero__text--title {
+    font-size: var(--lg);
+    margin-bottom: 20px;
+}
+
+.hero__text--content {
+    font-size: var(--md);
+}
+
+/* Propuesta de valor */ 
+.home-main__propuesta {
+    background-color: var(--light);
+    color: var(--secondary);
+    padding: 32px;
+    text-align: center;
+}
+
+.home-main__propuesta--title {
+    font-size: var(--xl);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.home-main__propuesta--content {
+    font-size: var(--md);
+    color: var(--black);
+    margin: 0 auto;
+}
+
+
+/* Beneficios */
+.home-main__beneficios header{
+    color: var(--primary);
+    margin-top: 24px;
+    text-align: center;
+}
+
+.home-main__beneficios ul {
+    list-style: none;
+}
+
+.home-main__beneficios ul li {
+    margin-bottom: 4px;
+}
+
+.home-main__beneficios ul li::before{
+    content: "•";
+    color: var(--secondary);
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+/* Soluciones */
+.soluciones__title{
+    color: var(--primary);
+    margin-top: 24px;
+    text-align: center;
+    font-size: var(--xl);
+}
+
+.soluciones__cards {
+    display: grid;
+    margin: 24px 0;
+    justify-content: center;
+
+}
+
+.soluciones__card {
+    border: 1px solid var(--light);
+    border-radius: var(--br);
+    color: var(--gray);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.soluciones__card .card__title {
+    font-size: var(--md);
+    text-align: center;
+}
+.soluciones__card .card__img {
+    width: 50%;
+    height: auto;
+    margin: 40px 0;
+}
+
+.soluciones__card footer {
+    font-size: var(--md);
+    text-align: left;
+    width: 100%;
+}
+
+.soluciones__card .card__link {
+    text-decoration: none;
+    color: var(--gray);
+    transition: all 0.6s ease-in-out;
+
+}
+
+.soluciones__card .card__link:hover {
+    color: var(--secondary);
+    border-bottom: 1px solid var(--secondary);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Coaching empresarial */
+.home-main__coaching {
+    background-color: var(--light);
+}
+
+/* Lo que dicen de nosotros */
+.home-main__opiniones {
+    background-color: var(--light);
+}
+
+.opiniones__header {
+    text-align: center;
+    padding: 24px 0;
+    font-size: var(--md);
+}
+
+.opiniones__header h1 {
+    color: var(--primary);
+}
+
+.carousel .carousel-inner {
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+.home-main__opiniones .home-main__opinion {
+    background-color: var(--white);
+    border-radius: var(--br);
+    padding: 24px;
+    box-shadow: var(--box-shadow);
+    margin: 0;
+}
+
+.home-main__opinion h2 {
+    color: var(--primary);
+    font-size: var(--md);
+}
+
+.home-main__opinion h3 {
+    color: var(--gray);
+    font-size: var(--md);
+    margin: 8px 0;
+}
+
+.home-main__opinion p {
+    color: var(--black);
+    font-size: var(--sm);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+    transform: scale(2);
+}
+
+@media (min-width: 320px) {
+    .responsive-container {
+        grid-template-columns: 1fr;
+        padding: 32px;
+    }
+
+    .home-main__hero {
+        height: 300px;
+    }
+    .hero__text {
+        height: 280px;
+        left: calc(50% - 150px);
+        top: calc(50% - 140px);
+        width: 300px;
+    }
+    .home-main__propuesta--content {
+        width: 80%;
+    }
+
+    .soluciones__cards {
+        grid-template-columns: repeat(2, 150px);
+        grid-gap: 12px;
+    }
+
+    a.carousel-control-next,
+    a.carousel-control-prev
+    {
+        width: 20%;
+    }
+
+    .home-main__opiniones .home-main__opinion {
+        width: 250px;
+    }
+}
+
+@media (min-width: 768px) {
+    .responsive-container {
+        grid-template-columns: 1fr 1fr;
+        padding: 32px 64px;
+
+    }
+
+    .home-main__hero {
+        height: 400px;
+    }
+    .hero__text {
+        left: 64px;
+        width: 400px;
+        height: 200px;
+    }
+    .home-main__propuesta--content {
+        width: 50%;
+    }
+
+    .soluciones__cards {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 160px));
+        grid-gap: 24px;
+        
+    }
+    
+    .home-main__opiniones .home-main__opinion {
+        width: 500px;
+    }
+    a.carousel-control-next,
+    a.carousel-control-prev
+    {
+        width: 30%;
+    }
+
+}
