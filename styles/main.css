@@ -72,7 +72,7 @@ html {
 }
 
 /* Listas no ordenada (viñeta) */
-ul {
+.unorder-list {
     list-style: none;
 }
 
@@ -80,7 +80,7 @@ li {
     margin-bottom: 12px;
 }
 
-ul li::before{
+.unorder-list li::before{
     content: "•";
     color: var(--secondary-color);
     margin-right: 12px;
@@ -94,6 +94,13 @@ ul li::before{
 /* Header */
 .collapse.navbar-collapse {
     justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 
 .navbar__item {
@@ -101,7 +108,7 @@ ul li::before{
     cursor: pointer;
     color: var(--black-color);
     text-decoration: none;
-    margin: 12px;
+    margin: 0 12px;
 }
 
 .footer__image--img {
@@ -372,7 +379,7 @@ ul li::before{
 
 /* Sección: Acerca de vision y transformación dig. */
 .about-main__vision {
-    margin-bottom: 64px;
+    margin: 64px 0;
 }
 .about-main__vision .vision__title {
     text-align: center;
@@ -501,7 +508,7 @@ ul li::before{
 
 .instrumentacion__columns {
     display: grid;
-    margin: 48px auto;
+    margin: 48px auto 0 auto;
     justify-content: center;
 }
 
@@ -580,7 +587,7 @@ ul li::before{
     color: rgb(201, 0, 0);
 }
 
-.form__body .input input, select {
+.form__body .input input, select  {
     padding: 0px 4px;
     border: 1px solid var(--gray-color);
     transition: all 0.7s ease-in-out;
@@ -614,6 +621,70 @@ ul li::before{
     padding: 12px;
     width: 66%;
     margin: auto;
+}
+
+/* *********************************
+    Estilos del archivo langing1.html
+********************************* */
+/* Header del documento */
+.header-landing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 64px;
+}
+
+.header-landing__number {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.header-landing__button button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--br);
+    color: var(--white-color);
+    font-size: 2rem;
+    padding: 12px;
+    width: 150px;
+}
+
+.landing1-main__somos {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.landing1-main__somos h1 {
+    font-size: 2rem;
+}
+
+.landing1-main__cta {
+    position: relative;
+}
+
+.landing1-main__cta .cta__form {
+    position: absolute;
+    right: 5%;
+    top: -240px;
+    background-color: var(--white-color);
+}
+
+.landing1-main .services-main__instrumentacion {
+    background-color: var(--white-color);
+}
+
+.services-main__productos {
+    display: grid;
+    background-color: var(--light-color);
+}
+
+.services-main__productos .productos__card {
+    padding: 32px;
+}
+
+.landing1-main__medioambiental, .landing1-main__semiconductores {
+    background-color: var(--light-color);
 }
 
 
@@ -678,7 +749,7 @@ ul li::before{
         justify-content: center;
     }
 
-    .services-main__software.responsive-container .asesorias__column.container__image { 
+    .reverse-responsive .container__image {
         grid-row: 3; /* La imagen se situa despues de la columna de texto */
     }
 
@@ -711,6 +782,40 @@ ul li::before{
     .cta__form {
         width: 300px;
     }
+
+    .header-landing {
+        justify-content: center;
+    }
+
+    .header-landing div {
+        margin: 12px 0;
+    }
+
+    .landing1-main__somos {
+        padding: 16px 32px;
+    }
+    .somos__text {
+        width: 100%;
+        text-align: center;
+    }
+    .landing1-main__cta .cta__text {
+        width: 100%;
+        padding: 16px 32px;
+    }
+    .landing1-main__cta .cta__form {
+        position: static;
+    }
+
+    .services-main__productos {
+        grid-template-columns: 1fr;
+    }
+
+    .services-main__productos .productos__card:nth-child(2) {
+        border-top: 1px solid var(--gray-color);
+        border-bottom: 1px solid var(--gray-color);
+    }
+    
+
 }
 
 /* Mediaquery para dispositivos mayores a  768px */
@@ -783,11 +888,8 @@ ul li::before{
         justify-content: right;
     }
 
-    .services-main__software.responsive-container .container__image {
+    .reverse-responsive .container__image {
         justify-content: left;
-    }
-
-    .services-main__software.responsive-container .asesorias__column.container__image {
         grid-row: 1; /* La imagen se situa antes de la columna de texto */
     }
 
@@ -803,11 +905,9 @@ ul li::before{
         flex-direction: row;
         align-items: flex-start;
     }
-
     .proceso__step {
         width: 25%;
     }
-
     .step__line {
         display: block;
     }
@@ -822,4 +922,36 @@ ul li::before{
         width: 400px;
     }
 
+    .header-landing {
+        justify-content: space-between;
+    }
+    .header-landing div {
+        margin: 0;
+    }
+
+    .landing1-main__somos {
+        padding: 16px 64px;
+    }
+    .somos__text {
+        width: 47%;
+        text-align: left;
+    }
+    .landing1-main__cta .cta__text {
+        width: 50%;
+        padding: 16px 80px;
+    }
+    .landing1-main__cta .cta__form {
+        position: absolute;
+    }
+
+    .services-main__productos {
+        padding: 0px 64px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .services-main__productos .productos__card:nth-child(2) {
+        border: none;
+        border-left: 1px solid var(--gray-color);
+        border-right: 1px solid var(--gray-color);
+    }
 }
