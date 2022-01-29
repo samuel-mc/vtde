@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -15,13 +16,14 @@ html {
     --xl: 3rem;
 
     /* Colors */
-    --black: #000;
-    --white: #fff;
-    --gray: #686868;
+    --black-color: #000;
+    --white-color: #fff;
+    --gray-color: #686868;
 
-    --primary: #001b48;
-    --secondary: #02457a;
-    --light: #D6E8ee;
+    --primary-color: #001b48;
+    --secondary-color: #02457a;
+    --tertiary-color: #0044C2;
+    --light-color: #e2e2e2;
     
     /* Border Radius */
     --br: 12px;
@@ -30,9 +32,9 @@ html {
     --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-/* 
+/* **************************
     Estilos que se reutilizan
-*/
+************************** */
 
 /* Contenedor que ajusta sus columas de acuerdo al tamaño del dispositivo */
 .responsive-container {
@@ -40,50 +42,101 @@ html {
     gap: 12px;
 }
 
-.responsive-container__title {
+.section__title {
     font-size: var(--lg);
     font-weight: bold;
-    color: var(--secondary);
+    color: var(--secondary-color);
     margin-bottom: 20px;
 }
 
-.responsive-container__content {
+.section__text {
     font-size: var(--md);
-    color: var(--black);
+    color: var(--black-color);
 }
 
-.responsive-container .about__image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container__subtitle {
+    font-size: var(--lg);
+    font-weight: bold;
+    color: var(--tertiary-color);
+    margin-bottom: 20px;
 }
 
-.responsive-container .about__image--img {
+.responsive-container img {
     width: 80%;
     height: auto;
 }
 
-
-/*
-    Estilos del archivo home.html
-*/
-
-/* Header */
-.navbar__logo {
-    width: 300px;
+.responsive-container .container__image {
+    display: flex;
+    align-items: center;
 }
 
-.container-fluid {
-    display: flex;
-    justify-content: space-around;
+/* Listas no ordenada (viñeta) */
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+ul li::before{
+    content: "•";
+    color: var(--secondary-color);
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+/* *********************************
+    Estilos del archivo index.html
+********************************* */
+
+/* Header */
+.collapse.navbar-collapse {
+    justify-content: flex-end;
 }
 
 .navbar__item {
     font-size: var(--md);
     cursor: pointer;
-    color: var(--black);
+    color: var(--black-color);
     text-decoration: none;
     margin: 12px;
+}
+
+.footer__image--img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.footer .footer__text--big {
+    font-size: var(--lg);
+    color: var(--tertiary-color);
+    padding: 32px;
+    background-color: var(--white-color);
+    text-align: center;
+}
+
+.footer div.footer__text--small {
+    font-size: var(--lg);
+    color: var(--white-color);
+    padding: 12px;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.footer__deskrive {
+    background-color: var(--gray-color);
+    color: var(--white-color);
+    font-size: var(--sm);
+    padding: 4px;
+    text-align: center;
+}
+
+.footer__deskrive a {
+    color: rgb(0, 221, 55);
+    text-decoration: none;
 }
 
 /* Hero */
@@ -98,9 +151,9 @@ html {
 }
 
 .hero__text {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 12px;
-    color: var(--white);
+    color: var(--white-color);
     height: 200px;
     padding: 16px;
     position: absolute;
@@ -117,8 +170,8 @@ html {
 
 /* Propuesta de valor */ 
 .home-main__propuesta {
-    background-color: var(--light);
-    color: var(--secondary);
+    background-color: var(--light-color);
+    color: var(--secondary-color);
     padding: 32px;
     text-align: center;
 }
@@ -131,14 +184,14 @@ html {
 
 .home-main__propuesta--content {
     font-size: var(--md);
-    color: var(--black);
+    color: var(--black-color);
     margin: 0 auto;
 }
 
 
 /* Beneficios */
 .home-main__beneficios header{
-    color: var(--primary);
+    color: var(--primary-color);
     margin-top: 24px;
     text-align: center;
 }
@@ -151,16 +204,9 @@ html {
     margin-bottom: 4px;
 }
 
-.home-main__beneficios ul li::before{
-    content: "•";
-    color: var(--secondary);
-    margin-right: 12px;
-    font-weight: bold;
-}
-
 /* Soluciones */
 .soluciones__title{
-    color: var(--primary);
+    color: var(--primary-color);
     margin-top: 24px;
     text-align: center;
     font-size: var(--xl);
@@ -174,9 +220,9 @@ html {
 }
 
 .soluciones__card {
-    border: 1px solid var(--light);
+    border: 1px solid var(--light-color);
     border-radius: var(--br);
-    color: var(--gray);
+    color: var(--gray-color);
     padding: 12px;
     display: flex;
     flex-direction: column;
@@ -201,26 +247,32 @@ html {
 }
 
 .soluciones__card .card__link {
+    color: var(--gray-color);
+    padding: 8px 12px;    
     text-decoration: none;
-    color: var(--gray);
     transition: all 0.6s ease-in-out;
-
 }
 
 .soluciones__card .card__link:hover {
-    color: var(--secondary);
-    border-bottom: 1px solid var(--secondary);
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: var(--br);
+    color: var(--white-color);
+    padding: 8px 12px;    
+
     transition: all 0.3s ease-in-out;
 }
 
 /* Coaching empresarial */
 .home-main__coaching {
-    background-color: var(--light);
+    background-color: var(--light-color);
 }
 
 /* Lo que dicen de nosotros */
 .home-main__opiniones {
-    background-color: var(--light);
+    background-color: var(--light-color);
+    padding-bottom: 40px;
 }
 
 .opiniones__header {
@@ -230,7 +282,7 @@ html {
 }
 
 .opiniones__header h1 {
-    color: var(--primary);
+    color: var(--primary-color);
 }
 
 .carousel .carousel-inner {
@@ -240,26 +292,26 @@ html {
 }
 
 .home-main__opiniones .home-main__opinion {
-    background-color: var(--white);
+    background-color: var(--white-color);
     border-radius: var(--br);
     padding: 24px;
     box-shadow: var(--box-shadow);
-    margin: 0;
+    margin: 12px 0;
 }
 
 .home-main__opinion h2 {
-    color: var(--primary);
+    color: var(--primary-color);
     font-size: var(--md);
 }
 
 .home-main__opinion h3 {
-    color: var(--gray);
+    color: var(--gray-color);
     font-size: var(--md);
     margin: 8px 0;
 }
 
 .home-main__opinion p {
-    color: var(--black);
+    color: var(--black-color);
     font-size: var(--sm);
 }
 
@@ -269,7 +321,227 @@ html {
     transform: scale(2);
 }
 
+/* *********************************
+    Estilos del archivo about.html
+********************************* */
+
+/* Seccion: Primeros pasos para la transformación */
+.about-main__pasos .pasos__header {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.pasos__container-1, .pasos__container-2 {
+    display: grid;
+    font-size: var(--md);
+}
+
+.about-main__pasos .pasos__list {
+    padding: 16px;
+}
+
+.about-main__pasos .pasos__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 12px;
+    margin: 16px 0;
+}
+
+.pasos__cards .pasos__card {
+    border: 2px solid var(--primary-color);
+    border-radius: var(--br);
+    text-align: center;
+}
+
+.pasos__card .card__title {
+    background-color: var(--primary-color);
+    border-radius: 8px 8px 0 0;
+    color: var(--white-color);
+    font-size: var(--lg);
+    padding: 12px;
+}
+
+.pasos__card .card__content {
+    color: var(--black-color);
+    font-size: var(--md);
+    margin: 12px;
+    font-weight: bold;
+}
+
+/* Sección: Acerca de vision y transformación dig. */
+.about-main__vision {
+    margin-bottom: 64px;
+}
+.about-main__vision .vision__title {
+    text-align: center;
+}
+
+.vision__content.responsive-container {
+    gap: 32px;
+}
+
+.vision__content .vision__banner {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    height: auto;
+    margin: auto;
+    padding: 16px 28px;
+    width: 90%;
+    font-size: var(--sm);
+}
+
+.vision__content .vision__banner h1 {
+    font-weight: bold;
+}
+
+.vision__banner .vision__banner--footer {
+    text-align: center;
+}
+
+.vision__banner .vision__banner--footer img {
+    width: 36px;
+    margin: 4px 12px 0 12px;
+    transition: all 0.7s ease-in-out;
+
+}
+
+.vision__banner .vision__banner--footer img:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* *********************************
+    Estilos del archivo services.html
+********************************* */
+.services-main__asesorias {
+    background-color: var(--light-color);
+}
+
+.responsive-container .asesorias__column img {
+    width: 80%;
+    height: auto;
+}
+
+.asesorias__column ul li {
+    list-style: none;
+    margin: 8px 0;
+}
+
+.asesorias__column--img {
+    display: flex;
+    align-items: center;
+}
+
+.services-main__asociados {
+    text-align: center;
+    padding: 36px 0;
+}
+
+.asociados-img {
+    width: 200px;
+}
+
+
+
+/* Sección: Instrumentacion analitica */
+.services-main__instrumentacion {
+    background-color: var(--light-color);
+    padding: 64px;
+}
+.section__header {
+    text-align: center;
+    margin: 32px auto;
+}
+
+.services-main__instrumentacion .instrumentacion__section {
+    text-align: center;
+}
+
+
+.instrumentacion__proceso {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.proceso__step {
+    position: relative;
+}
+
+.proceso__step h1 {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: var(--white-color);
+    font-size: 3.6rem;
+    margin: 12px auto;
+    width: 50px;
+    height: 50px;
+}
+
+.proceso__step h2 {
+    color: var(--primary-color);
+    font-size: var(--md);
+}
+
+.proceso__step p {
+    font-size: var(--sm);
+}
+
+.step__line {
+    background-color: var(--primary-color);
+    height: 4px;
+    margin: 0 auto;
+    width: 80%;
+    position: absolute;
+    top: 35px;
+    left: 60%;
+}
+
+.instrumentacion__columns {
+    display: grid;
+    margin: 48px auto;
+    justify-content: center;
+}
+
+.instrumentacion__column ul,p {
+    font-size: var(--md);
+    list-style: none;
+}
+
+.instrumentacion__column li {
+    margin: 12px 0;
+}
+
+.instrumentacion__footer {
+    text-align: center;
+}
+
+.electricas__content {
+    font-size: var(--md);
+    justify-items: center;
+    align-items: center;
+}
+
+.services-main__electricas .electricas__content .container__image {
+    justify-content: center;
+    align-items: center;
+}
+
+.asociados__variaciones {
+    background-color: var(--light-color);
+}
+
+/* Mediaquery para dispositivos de 320 a 768px */
 @media (min-width: 320px) {
+    .navbar__logo {
+        width: 200px;
+    }
+    .header .navbar {
+        padding: 32px;
+    }
+
     .responsive-container {
         grid-template-columns: 1fr;
         padding: 32px;
@@ -302,9 +574,67 @@ html {
     .home-main__opiniones .home-main__opinion {
         width: 250px;
     }
+
+    .about-main__pasos {
+        padding: 32px;
+    }
+    .pasos__container-1, .pasos__container-2 {
+        grid-template-columns: 1fr;
+    }
+    .pasos__container-1 .pasos__cards {
+        grid-row: 1; /* Con el row, manda las cards a la primera columna en tamaño de dispositivo > 768px */
+    }
+    .home-main__pasos .pasos__line {
+        display: none;
+    }
+
+
+    .asesorias__column--img,
+    .responsive-container .container__image {
+        justify-content: center;
+    }
+
+    .services-main__software.responsive-container .asesorias__column.container__image { 
+        grid-row: 3; /* La imagen se situa despues de la columna de texto */
+    }
+
+    .services-main__instrumentacion {
+        padding: 32px;
+    }
+
+    .section__header {
+        width: 100%;
+    }
+
+    .instrumentacion__proceso {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proceso__step {
+        width: 100%;
+    }
+
+    .step__line {
+        display: none;
+    }
+    
+    .instrumentacion__columns {
+        grid-template-columns: 1fr;
+        grid-gap: 12px;
+    }
 }
 
+/* Mediaquery para dispositivos mayores a  768px */
 @media (min-width: 768px) {
+    .navbar__logo {
+        width: 300px;
+    }
+    
+    .header .navbar {
+        padding: 12px 64px;
+    }
+
     .responsive-container {
         grid-template-columns: 1fr 1fr;
         padding: 32px 64px;
@@ -325,8 +655,6 @@ html {
 
     .soluciones__cards {
         grid-template-columns: repeat(auto-fit, minmax(100px, 160px));
-        grid-gap: 24px;
-        
     }
     
     .home-main__opiniones .home-main__opinion {
@@ -336,6 +664,70 @@ html {
     a.carousel-control-prev
     {
         width: 30%;
+    }
+
+    .about-main__pasos {
+        padding: 32px 64px;
+    }
+    .pasos__container-1 { /* Distrubuye el contenido dentro del primer contenedor */
+        grid-template-columns: 2fr 1fr 3fr;
+    }
+    .pasos__container-2 { /* Distrubuye el contenido dentro del primer segundo */
+        grid-template-columns: 3fr 1fr 2fr;
+    }
+    .about-main__pasos .pasos__line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-main__pasos .pasos__line .line {
+        width: 70%;
+        height: 5px;
+        background-color: var(--black-color);
+    }
+    .pasos__container-1 .pasos__cards { /* Regresa las cards a un orden normal en dispositivos >= 768px */
+        grid-row: 1;
+        grid-column: 3;
+    }
+
+    .asesorias__column--img,
+    .responsive-container .container__image {
+        justify-content: right;
+    }
+
+    .services-main__software.responsive-container .container__image {
+        justify-content: left;
+    }
+
+    .services-main__software.responsive-container .asesorias__column.container__image {
+        grid-row: 1; /* La imagen se situa antes de la columna de texto */
+    }
+
+    .services-main__instrumentacion {
+        padding: 64px;
+    }
+
+    .section__header {
+        width: 50%;
+    }
+
+    .instrumentacion__proceso {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .proceso__step {
+        width: 25%;
+    }
+
+    .step__line {
+        display: block;
+    }
+
+    .instrumentacion__columns {
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 64px;
+        justify-items: center;
     }
 
 }
