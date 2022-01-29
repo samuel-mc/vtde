@@ -41,7 +41,91 @@
 
         <!-- Contenido del sitio -->
         <main class="contact-main">
-            
+            <!-- Inicio: Seccion "Si tienes alguna duda ..." -->
+            <section class="contacto-main__cta">
+                <h1 class="section__title">
+                    Si tienes alguna duda,<br>
+                    ponte en contacto con nosotros
+                </h1>
+                <div class="cta__form">
+                    <div class="form__header">
+                        <h2>Contáctanos</h2>
+                    </div>
+                    <div class="form__body">
+                        <form action="">
+                            <div class="input">
+                                <label for="name">Nombre <span>*</span></label>
+                                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre">
+                            </div>
+                            <div class="input">
+                                <label for="email">Correo Electónico <span>*</span> </label>
+                                <input type="email" name="email" id="email" placeholder="Ingresa tu correo electrónico">
+                            </div>
+                            <div class="input">
+                                <label for="phone">Número de teléfono <span>*</span> </label>
+                                <input type="tel" name="phone" id="phone" placeholder="Ingresa tu número de teléfono">
+                            </div>
+                            <div class="input">
+                                <label for="service">Tipo de servicio</label>
+                                <select name="service" id="service" placeholder="Selecciona el servicio que requieres ...">
+                                    <option value="">Selecciona el servicio que requieres ...</option>
+                                    <option value="1">Servicio 1</option>
+                                    <option value="2">Servicio 2</option>
+                                    <option value="3">Servicio 3</option>
+                                </select>
+                            </div>
+                            <div class="form__submit">
+                                <input type="submit" value="Agendar Llamada">
+                                <p>Uno de nuestros asesores se pondrá en contacto</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!-- Fin: Seccion "Si tienes alguna duda ..." -->
+
+            <!-- Inicio: Seccion "Lo que dicen de nosotros" -->
+            <section class="home-main__opiniones">
+                <header class="opiniones__header">
+                    <h1> Lo que dicen de nosotros</h1>
+                    <p> Empresas y clientes que han confiado en nosotros para su Transformación Digital</p>
+                </header>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="home-main__opinion carousel-item active">
+                        <h2>Nombre</h2>
+                        <h3>Empresa</h3>
+                        <p>
+                            “Coaching On_Demand”. Como principio está nuestro respeto por la experiencia
+                            del cliente, ya que sólo él conoce bien su empresa y lo que necesita.
+                            Nuestra aportación consiste en estar a su lado y comunicarle lo que vemos de
+                            forma externa para facilitarle la identificación de acciones pertinentes (OCES =>
+                            Observación, Causas y Estrategias de Solución).
+                        </p>
+                      </div>
+                      <div class="home-main__opinion carousel-item">
+                        <h2>Nombre2</h2>
+                        <h3>Empresa</h3>
+                        <p>
+                            “Coaching On_Demand”. Como principio está nuestro respeto por la experiencia
+                            del cliente, ya que sólo él conoce bien su empresa y lo que necesita.
+                            Nuestra aportación consiste en estar a su lado y comunicarle lo que vemos de
+                            forma externa para facilitarle la identificación de acciones pertinentes (OCES =>
+                            Observación, Causas y Estrategias de Solución).
+                        </p>
+                      </div>
+                    </div>
+                   <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </button>
+                </div>
+            </section>
+            <!-- Fin: Seccion "Lo que dicen de nosotros" -->
         </main>
 
 

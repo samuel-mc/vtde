@@ -533,6 +533,90 @@ ul li::before{
     background-color: var(--light-color);
 }
 
+/* *********************************
+    Estilos del archivo contact.html
+********************************* */
+
+.contacto-main__cta {
+    text-align: center;
+}
+
+.contacto-main__cta .section__title {
+    font-size: var(--xl);
+}
+
+.cta__form {
+    border: 2px solid var(--primary-color);
+    border-radius: var(--br);
+    margin: auto;
+    margin-bottom: 62px;
+    text-align: left;
+}
+
+.cta__form .form__header {
+    background-color: var(--primary-color);
+    border-radius: 8px 8px 0 0;
+    color: var(--white-color);
+    padding: 12px;
+    text-align: center;
+}
+
+.cta__form .form__header h2 {
+    font-size: var(--xl);
+}
+
+.cta__form .form__body {
+    padding: 12px 24px;
+}
+
+.form__body .input {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--md);
+    margin: 12px 0;
+}
+
+.form__body .input label span {
+    color: rgb(201, 0, 0);
+}
+
+.form__body .input input, select {
+    padding: 0px 4px;
+    border: 1px solid var(--gray-color);
+    transition: all 0.7s ease-in-out;
+    border-radius: 4px;
+}
+
+.form__body .input input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.form__body .form__submit {
+    text-align: center;
+    margin: 24px 0;
+    color: var(--gray-color);
+}
+
+.form__body .form__submit p {
+    font-size: var(--sm);
+    margin: 4px 0;
+}
+
+.form__body input[type="submit"] {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--br);
+    color: var(--white-color);
+    font-size: var(--md);
+    padding: 12px;
+    width: 66%;
+    margin: auto;
+}
+
+
 /* Mediaquery para dispositivos de 320 a 768px */
 @media (min-width: 320px) {
     .navbar__logo {
@@ -622,6 +706,10 @@ ul li::before{
     .instrumentacion__columns {
         grid-template-columns: 1fr;
         grid-gap: 12px;
+    }
+
+    .cta__form {
+        width: 300px;
     }
 }
 
@@ -728,6 +816,10 @@ ul li::before{
         grid-template-columns: repeat(3,1fr);
         grid-gap: 64px;
         justify-items: center;
+    }
+
+    .cta__form {
+        width: 400px;
     }
 
 }
