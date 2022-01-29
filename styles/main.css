@@ -10,8 +10,8 @@ html {
 
 :root {
     /* Font size */ 
-    --sm: 1.2rem;
-    --md: 1.6rem;
+    --sm: 1.4rem;
+    --md: 1.8rem;
     --lg: 2.4rem;
     --xl: 3rem;
 
@@ -23,7 +23,7 @@ html {
     --primary-color: #001b48;
     --secondary-color: #02457a;
     --tertiary-color: #0044C2;
-    --light-color: #e2e2e2;
+    --light-color: #f0f0f0;
     
     /* Border Radius */
     --br: 12px;
@@ -71,20 +71,19 @@ html {
     align-items: center;
 }
 
-/* Listas no ordenada (viñeta) */
+/* Listas no ordenada (viñeta azul) */
 .unorder-list {
     list-style: none;
 }
 
 li {
     margin-bottom: 12px;
+    list-style-type: '🔵';
+    padding-inline-start: 1ch;
 }
 
-.unorder-list li::before{
-    content: "•";
-    color: var(--secondary-color);
-    margin-right: 12px;
-    font-weight: bold;
+.unorder-list li::marker{
+    font-size: 1rem;
 }
 
 /* *********************************
@@ -105,10 +104,20 @@ li {
 
 .navbar__item {
     font-size: var(--md);
+    font-weight: bold;
     cursor: pointer;
     color: var(--black-color);
     text-decoration: none;
-    margin: 0 12px;
+    margin: 0 20px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.6s ease-in-out;
+}
+
+.navbar__item:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
 
 .footer__image--img {
@@ -205,6 +214,10 @@ li {
 
 .home-main__beneficios ul {
     list-style: none;
+}
+
+.home-main__beneficios ul li {
+    margin-bottom: 4px;
 }
 
 .home-main__beneficios ul li {
@@ -347,6 +360,15 @@ li {
 
 .about-main__pasos .pasos__list {
     padding: 16px;
+}
+
+.pasos__list .unorder-list li {
+    list-style-type: '📝';
+    padding-inline-start: 1ch;
+}
+
+.pasos__list .unorder-list li::marker {
+    font-size: var(--md);
 }
 
 .about-main__pasos .pasos__cards {
@@ -623,8 +645,12 @@ li {
     margin: auto;
 }
 
+textarea[name=service] {
+    resize: none;
+}
+
 /* *********************************
-    Estilos del archivo langing1.html
+    Estilos del archivo landing1.html
 ********************************* */
 /* Header del documento */
 .header-landing {
@@ -638,6 +664,11 @@ li {
 .header-landing__number {
     color: var(--primary-color);
     text-align: center;
+}
+
+.header-landing__number span svg {
+    width: 24px;
+    height: 24px;
 }
 
 .header-landing__button button {
@@ -666,7 +697,7 @@ li {
 .landing1-main__cta .cta__form {
     position: absolute;
     right: 5%;
-    top: -240px;
+    top: -280px;
     background-color: var(--white-color);
 }
 
@@ -684,6 +715,15 @@ li {
 }
 
 .landing1-main__medioambiental, .landing1-main__semiconductores {
+    background-color: var(--light-color);
+}
+
+/* *********************************
+    Estilos del archivo landing2.html
+********************************* */
+
+.landing1-main__erp,
+.landing1-main__coaching {
     background-color: var(--light-color);
 }
 
