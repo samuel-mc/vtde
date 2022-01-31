@@ -236,7 +236,6 @@ li {
     display: grid;
     margin: 24px 0;
     justify-content: center;
-
 }
 
 .soluciones__card {
@@ -255,7 +254,7 @@ li {
     text-align: center;
 }
 .soluciones__card .card__img {
-    width: 50%;
+    width: 80%;
     height: auto;
     margin: 40px 0;
 }
@@ -756,8 +755,9 @@ textarea[name=service] {
     }
 
     .soluciones__cards {
-        grid-template-columns: repeat(2, 150px);
+        grid-template-columns: repeat(2, minmax(150px, 200px));
         grid-gap: 12px;
+        padding: 32px;
     }
 
     a.carousel-control-next,
@@ -887,7 +887,8 @@ textarea[name=service] {
     }
 
     .soluciones__cards {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 160px));
+        grid-template-columns: repeat(auto-fit, minmax(120px, 200px));
+        padding: 0 64px;
     }
     
     .home-main__opiniones .home-main__opinion {
