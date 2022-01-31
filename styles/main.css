@@ -12,7 +12,7 @@ html {
     /* Font size */ 
     --sm: 1.4rem;
     --md: 1.8rem;
-    --lg: 2.4rem;
+    --lg: 2.2rem;
     --xl: 3rem;
 
     /* Colors */
@@ -250,8 +250,9 @@ li {
 }
 
 .soluciones__card .card__title {
-    font-size: var(--md);
+    font-size: var(--lg);
     text-align: center;
+    font-weight: normal;
 }
 .soluciones__card .card__img {
     width: 80%;
@@ -267,6 +268,7 @@ li {
 
 .soluciones__card .card__link {
     color: var(--gray-color);
+    font-size: var(--md);
     padding: 8px 12px;    
     text-decoration: none;
     transition: all 0.6s ease-in-out;
@@ -887,7 +889,7 @@ textarea[name=service] {
     }
 
     .soluciones__cards {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 200px));
+        grid-template-columns: repeat(auto-fit, minmax(120px, 250px));
         padding: 0 64px;
     }
     
